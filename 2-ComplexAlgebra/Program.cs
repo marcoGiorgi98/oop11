@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 namespace ComplexAlgebra
 {
     class Program
@@ -11,7 +12,10 @@ namespace ComplexAlgebra
         /// TODO: uncomment the commented code, if any
         static void Main(string[] args)
         {
-            // var zero = new Complex(0, 0);
+
+            var zero = new Complex(3, -2);
+            Console.WriteLine(zero.Completo);
+
             // var one = new Complex(1, 0);
             // var i = new Complex(0, 1);
             // var onePlusI = one.Plus(i);

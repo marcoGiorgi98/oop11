@@ -1,3 +1,7 @@
+using System;
+
+
+
 namespace ComplexAlgebra
 {
     /// <summary>
@@ -17,6 +21,42 @@ namespace ComplexAlgebra
     /// TODO:     - e.g. via the Equals(object) method
     public class Complex
     {
+        
+        public Complex(int num , double imma)
+        {
+            this.Number=num;
+            this.Immaginary=imma;
+
+        }
+        public int Number { get;} 
+        
+        public double Immaginary {get;}
+           
+        public double Modul => Math.Sqrt(Number*Number + Immaginary*Immaginary);
+
+        public double Phase => Math.Atan2(Number , Immaginary);
+
+        public string Segno(double im)
+        {       
+            
+            if (Math.Sign(Immaginary)==-1)
+            {
+                return "-";
+            }
+            if(Math.Sign(Immaginary)==1)
+            {
+                return "+";
+            }
+            return "";
+        }
+        
+
+        public string Completo => Convert.ToString(Number) + Segno(Immaginary) + Convert.ToString(Immaginary) + "i";
+
+        public Complex Sum(int a, int b, int c ,int d)
+        {
+          return new Complex(a+c, b+d);
+        }        
         // TODO: fill this class\
     }
 }
